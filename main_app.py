@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*- 
 # flask 核心处理模块
 from flask import Flask
+import config
 # app应用入口
 app = Flask(__name__)
 
@@ -12,4 +13,6 @@ def hello():
     return "hello world"
 
 if __name__ == "__main__":
-    app.run(debug=True, port=8080)
+    host = config.host
+    port = config.port
+    app.run(host=host, debug=True, port=port)
